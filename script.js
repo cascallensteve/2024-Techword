@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 // Main JavaScript for Techworld Designs
 
 // Wait for DOM to be fully loaded
@@ -411,3 +412,16 @@ function preloadImages() {
 
 // Preload images
 preloadImages();
+=======
+
+  // Smooth Scroll functionality
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      e.preventDefault();
+      document.querySelector(this.getAttribute('href')).scrollIntoView({
+        behavior: 'smooth'
+      });
+    });
+  });
+
+>>>>>>> c637a6e809cf509ce5d1e24daa6759847c1e054b

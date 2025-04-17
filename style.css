@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 /* Main Styles for Techworld Designs */
 :root {
   --primary-color: #1e3a8a;    /* Blue-900 */
@@ -605,3 +606,88 @@ html {
   background-color: var(--accent-color);
   transform: translateY(-5px);
 }
+=======
+nav a {
+    position: relative;
+    text-decoration: none;
+    color: inherit;
+    display: inline-block;
+  }
+  
+  nav a::before {
+    content: '';
+    position: absolute;
+    top: 0; /* Position underline at the top */
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: gold;
+    transition: width 0.3s ease-in-out;
+  }
+  
+  nav a:hover::before {
+    width: 70%; /* Full underline on hover */
+  }
+  
+
+/* our services section */
+  .hover-underline-shadow {
+    transition: all 0.3s ease;
+  }
+  
+  .hover-underline-shadow:hover {
+    text-decoration: underline;
+    text-shadow: 2px 2px 5px rgba(253, 216, 4, 0.2);
+  }
+  
+
+
+  /* Enhance text and layout */
+h2 {
+    transition: color 0.3s ease;
+  }
+  
+  h2:hover {
+    color: #007bff; /* Color change on hover */
+  }
+  
+  /* Buttons - Scale on hover and shadow effect */
+  button, .inline-block {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  button:hover, .inline-block:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Image hover effect */
+  img {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  img:hover {
+    transform: scale(1.05); /* Slight zoom effect */
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+  }
+  
+  /* Adjust spacing for lists and text */
+  ul li {
+    font-size: 1.1rem;
+    line-height: 1.8;
+  }
+  
+  ul li i {
+    transition: color 0.3s ease;
+  }
+  
+  ul li:hover i {
+    color: #007bff; /* Icon color change on hover */
+  }
+  
+  /* Smooth Scroll for buttons */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+>>>>>>> c637a6e809cf509ce5d1e24daa6759847c1e054b
