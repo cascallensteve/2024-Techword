@@ -1,0 +1,607 @@
+/* Main Styles for Techworld Designs */
+:root {
+  --primary-color: #1e3a8a;    /* Blue-900 */
+  --secondary-color: #10b981;  /* Green-500 */
+  --accent-color: #3b82f6;     /* Blue-500 */
+  --text-light: #f9fafb;       /* Gray-50 */
+  --text-dark: #1f2937;        /* Gray-800 */
+  --bg-light: #f3f4f6;         /* Gray-100 */
+  --transition-speed: 0.3s;
+}
+
+/* Base Styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+/* Custom Animations */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+/* Header Styling */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: all var(--transition-speed);
+}
+
+header.scrolled {
+  background-color: rgba(30, 58, 138, 0.95) !important;
+  backdrop-filter: blur(10px);
+}
+
+header .container {
+  transition: padding var(--transition-speed);
+}
+
+header.scrolled .container {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+header img {
+  transition: transform var(--transition-speed);
+}
+
+header img:hover {
+  transform: scale(1.1);
+}
+
+/* Navigation Links */
+nav a {
+  position: relative;
+  font-weight: 500;
+  transition: all var(--transition-speed);
+  padding: 0.5rem 1rem;
+  border-radius: 0.25rem;
+}
+
+nav a:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+nav a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: white;
+  transition: all var(--transition-speed);
+  transform: translateX(-50%);
+}
+
+nav a:hover::after {
+  width: 80%;
+}
+
+/* Banner Section */
+.banner-section {
+  position: relative;
+  min-height: 600px;
+  background-attachment: fixed;
+  background-size: cover;
+  overflow: hidden;
+}
+
+.banner-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.7), rgba(59, 130, 246, 0.7));
+  z-index: 1;
+}
+
+.banner-section .container {
+  position: relative;
+  z-index: 2;
+}
+
+.banner-section h1 {
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out;
+}
+
+.banner-section p {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+  animation: fadeIn 1s ease-out 0.3s forwards;
+  opacity: 0;
+}
+
+.banner-section a {
+  transition: all var(--transition-speed);
+  animation: fadeIn 1s ease-out 0.6s forwards;
+  opacity: 0;
+}
+
+.banner-section a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+.banner-section img {
+  animation: fadeIn 1s ease-out 0.9s forwards;
+  opacity: 0;
+  filter: drop-shadow(0 10px 15px rgba(0, 0, 0, 0.3));
+  transition: transform var(--transition-speed);
+}
+
+.banner-section img:hover {
+  transform: scale(1.05);
+}
+
+/* Services Section */
+#services {
+  background: linear-gradient(135deg, #dbeafe, #ede9fe);
+  padding: 5rem 0;
+}
+
+#services h2 {
+  position: relative;
+  display: inline-block;
+}
+
+.hover-underline-shadow::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  bottom: -10px;
+  left: 0;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  transform: scaleX(0.7);
+  transform-origin: center;
+  transition: transform var(--transition-speed);
+  border-radius: 2px;
+}
+
+.hover-underline-shadow:hover::after {
+  transform: scaleX(1);
+}
+
+#services .bg-white {
+  transition: all var(--transition-speed);
+  border-radius: 1rem;
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+#services .bg-white:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+#services img {
+  transition: transform var(--transition-speed);
+  border-radius: 0.5rem;
+  max-height: 200px;
+  object-fit: cover;
+}
+
+#services .bg-white:hover img {
+  transform: scale(1.1);
+}
+
+#services h3 {
+  transition: color var(--transition-speed);
+}
+
+#services .bg-white:hover h3 {
+  color: var(--accent-color);
+}
+
+/* Work Section */
+#work {
+  padding: 5rem 0;
+  background: linear-gradient(to bottom, white, #f3f4f6);
+}
+
+#work h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#work h2::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  bottom: -10px;
+  left: 10%;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+#work .rounded-lg {
+  transition: all var(--transition-speed);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+#work .rounded-lg:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+#work img {
+  transition: all var(--transition-speed);
+  height: 250px;
+  object-fit: cover;
+}
+
+#work .rounded-lg:hover img {
+  transform: scale(1.1);
+}
+
+/* Why Choose Us Section */
+#why-choose-us {
+  position: relative;
+}
+
+#why-choose-us h2 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 2rem;
+}
+
+#why-choose-us h2::after {
+  content: '';
+  position: absolute;
+  width: 60%;
+  height: 4px;
+  bottom: -10px;
+  left: 20%;
+  background: linear-gradient(90deg, var(--accent-color), var(--secondary-color));
+  border-radius: 2px;
+}
+
+#why-choose-us ul li {
+  transition: transform var(--transition-speed);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  background-color: rgba(255, 255, 255, 0.7);
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+#why-choose-us ul li:hover {
+  transform: translateX(10px);
+  background-color: white;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+#why-choose-us img {
+  transition: all var(--transition-speed);
+  border-radius: 1rem;
+}
+
+#why-choose-us img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* Testimonials Section */
+#testimonials {
+  background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+  padding: 5rem 0;
+}
+
+#testimonials h2 {
+  position: relative;
+  display: inline-block;
+}
+
+#testimonials h2::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 4px;
+  bottom: -10px;
+  left: 10%;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+.swiper-container {
+  padding: 2rem 0;
+}
+
+.swiper-slide {
+  transition: transform var(--transition-speed);
+  padding: 1rem;
+}
+
+.swiper-slide-active {
+  transform: scale(1.05);
+}
+
+.swiper-slide .bg-white {
+  border-radius: 1rem;
+  height: 100%;
+  transition: all var(--transition-speed);
+}
+
+.swiper-slide:hover .bg-white {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+.swiper-slide img {
+  border: 4px solid var(--accent-color);
+  transition: all var(--transition-speed);
+}
+
+.swiper-slide:hover img {
+  transform: scale(1.1);
+}
+
+.swiper-button-next,
+.swiper-button-prev {
+  color: var(--primary-color) !important;
+  background-color: white;
+  width: 3rem !important;
+  height: 3rem !important;
+  border-radius: 50%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.swiper-button-next:after,
+.swiper-button-prev:after {
+  font-size: 1.5rem !important;
+}
+
+.swiper-pagination-bullet {
+  width: 12px;
+  height: 12px;
+  background-color: var(--primary-color);
+  opacity: 0.5;
+}
+
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background-color: var(--accent-color);
+}
+
+/* Footer */
+footer {
+  background: linear-gradient(to bottom, #1e3a8a, #111827);
+  position: relative;
+  padding: 5rem 0 2rem;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+}
+
+footer h3 {
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1.5rem;
+}
+
+footer h3::after {
+  content: '';
+  position: absolute;
+  width: 80%;
+  height: 3px;
+  bottom: -8px;
+  left: 0;
+  background: linear-gradient(90deg, var(--secondary-color), var(--accent-color));
+  border-radius: 2px;
+}
+
+footer .w-full.md\:w-1\/3 {
+  transition: transform var(--transition-speed);
+}
+
+footer .w-full.md\:w-1\/3:hover {
+  transform: translateY(-5px);
+}
+
+footer input {
+  transition: all var(--transition-speed);
+  border: 2px solid transparent;
+}
+
+footer input:focus {
+  outline: none;
+  border-color: var(--accent-color);
+}
+
+footer button {
+  transition: all var(--transition-speed);
+}
+
+footer button:hover {
+  transform: translateX(3px);
+}
+
+footer a {
+  transition: all var(--transition-speed);
+}
+
+footer a img {
+  transition: all var(--transition-speed);
+}
+
+footer a:hover img {
+  transform: scale(1.2);
+}
+
+/* Media Queries */
+@media (max-width: 768px) {
+  .banner-section {
+    min-height: 400px;
+  }
+  
+  #services .bg-white {
+    margin-bottom: 2rem;
+  }
+  
+  .swiper-slide-active {
+    transform: scale(1);
+  }
+  
+  footer .w-full.md\:w-1\/3 {
+    margin-bottom: 2rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .banner-section {
+    min-height: 300px;
+  }
+  
+  .banner-section h1 {
+    font-size: 2rem;
+  }
+  
+  #services h2, #work h2, #testimonials h2 {
+    font-size: 1.75rem;
+  }
+  
+  #services .bg-white {
+    padding: 1rem;
+  }
+  
+  footer input, footer button {
+    width: 100%;
+    margin-bottom: 0.5rem;
+  }
+  
+  footer button {
+    border-radius: 0.5rem !important;
+  }
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Button Styling */
+.btn {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  border-radius: 9999px;
+  font-weight: 600;
+  text-align: center;
+  transition: all var(--transition-speed);
+  cursor: pointer;
+}
+
+.btn-primary {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+.btn-secondary {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+.btn-secondary:hover {
+  background-color: var(--bg-light);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Custom Animations Classes */
+.animate-fade-in {
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+/* Read More/Less Button Animation */
+#read-more-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+#read-more-btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s;
+}
+
+#read-more-btn:hover::before {
+  left: 100%;
+}
+
+/* More Info Text Animation */
+#more-info {
+  transition: all 0.5s ease-out;
+  max-height: 0;
+  overflow: hidden;
+}
+
+#more-info.show {
+  max-height: 500px;
+  padding: 1rem 0;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--primary-color);
+  color: white;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  opacity: 0;
+  visibility: hidden;
+  transition: all var(--transition-speed);
+  cursor: pointer;
+  z-index: 99;
+}
+
+.back-to-top.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+.back-to-top:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-5px);
+}
